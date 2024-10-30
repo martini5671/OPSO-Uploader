@@ -1,0 +1,32 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <!--
+    name has to be unique and transaction type can vary
+    this xml is needed to create connection with hibernate
+     -->
+    <persistence-unit name="MPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <!-- Database connection settings -->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/opso"/>
+            <property name="jakarta.persistence.jdbc.user" value="opso"/>
+            <property name="jakarta.persistence.jdbc.password" value="opso123!"/>
+
+            <!-- Hibernate properties to show SQL -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <!-- Schema generation property -->
+            <!-- possible: create, none, update -->
+            <!-- this is nice for development purposes -->
+            <!-- this property can specify whether to create new tables if they are not present in db -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>

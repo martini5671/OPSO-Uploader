@@ -8,12 +8,25 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class PDFParser {
-    private final String fileName;
+
+
+    private String fileName = "output.pdf";
 
     public PDFParser(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public PDFParser() {
+
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
         this.fileName = fileName;
     }
 

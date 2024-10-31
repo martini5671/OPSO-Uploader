@@ -18,9 +18,6 @@ public class PDFDownloader {
 
     public PDFDownloader() {
     }
-    public PDFDownloader(String date){
-        this.localDate = LocalDate.parse(date);
-    }
 
     public void downloadPDF() throws IOException {
         String url = getUrl();
@@ -47,7 +44,7 @@ public class PDFDownloader {
     }
 
     public static void main(String[] args) throws IOException {
-        PDFDownloader pdfDownloader = new PDFDownloader("2024-10-30");
+        PDFDownloader pdfDownloader = new PDFDownloader();
         String url= pdfDownloader.getUrl();
         System.out.println(url);
         pdfDownloader.downloadPDF();

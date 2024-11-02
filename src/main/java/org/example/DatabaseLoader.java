@@ -8,20 +8,20 @@ import org.example.entities.Menu;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 public class DatabaseLoader {
-    private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("MPU");
-    private final EntityManager entityManager = emf.createEntityManager();
+    private EntityManager entityManager;
     private List<Meal> mealList;
     private Menu menu;
 
     public DatabaseLoader(List<Meal> mealList, Menu menu) {
         this.mealList = mealList;
         this.menu = menu;
+        this.entityManager = Persistence.createEntityManagerFactory("MPU").createEntityManager();
     }
 
-    public DatabaseLoader() {
-    }
 
     public void persistAll() {
         entityManager.getTransaction().begin();
@@ -32,27 +32,6 @@ public class DatabaseLoader {
         entityManager.persist(menu);
         entityManager.getTransaction().commit(); // thats where queries happen
 
-        // or also in flush()
-        entityManager.close();
-    }
-
-    public void persistTest() {
-        entityManager.getTransaction().begin();
-        Meal meal = new Meal("pomidorowa", "soup");
-        Meal meal1 = new Meal("ryba", "fishMeat");
-        // set menu:
-        Menu menu1 = new Menu();
-        menu1.setLocalDate(LocalDate.now());
-        meal.setMenu(menu1);
-        meal1.setMenu(menu1);
-        // set relaionships for meals:
-        meal.setMenu(menu1);
-        meal1.setMenu(menu1);
-        // persist:
-        entityManager.persist(meal);
-        entityManager.persist(meal1);
-        entityManager.persist(menu1);
-        entityManager.getTransaction().commit(); // thats where queries happen
         // or also in flush()
         entityManager.close();
     }

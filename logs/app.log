@@ -1,0 +1,15 @@
+15:12:47.546 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Table 'opso.menu' doesn't exist
+15:15:03.194 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: MPU]
+15:15:03.224 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.1.Final
+15:15:03.250 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+15:15:03.360 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+15:15:03.563 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/opso]
+	Database driver: com.mysql.jdbc.Driver
+	Database version: 8.0.39
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+15:15:04.385 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+15:15:04.497 [main] INFO  org.example.Main - The data was successfully uploaded to the database

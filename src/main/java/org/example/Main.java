@@ -14,19 +14,22 @@ import java.util.List;
 
 public class Main {
 
-    private static Logger logger = LogManager.getLogger(Main.class);
+    private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws IOException {
         PDFDownloader pdfDownloader = new PDFDownloader();
+        pdfDownloader.setLocalDate(LocalDate.parse("2024-10-31"));
         try {
             pdfDownloader.downloadPDF();
         } catch (FileNotFoundException fileNotFoundException) {
             logger.error("The pdf file with menu could not be found in the OPSO website.");
+            System.out.println("The pdf could not be downloaded from OPSO website");
             System.exit(1);
         }
         PDFParser pdfParser = new PDFParser();
         List<Meal> meals = pdfParser.getMeals();
         DatabaseLoader databaseLoader = new DatabaseLoader(meals, new Menu(meals, LocalDate.now()));
         databaseLoader.persistAll();
+        logger.info("The data was successfully uploaded to the database");
     }
 }

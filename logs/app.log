@@ -13,3 +13,18 @@
 	Maximum pool size: 20
 15:15:04.385 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 15:15:04.497 [main] INFO  org.example.Main - The data was successfully uploaded to the database
+15:26:34.541 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: MPU]
+15:26:34.572 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.1.Final
+15:26:34.600 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+15:26:34.714 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+15:26:34.931 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:3306/opso]
+	Database driver: com.mysql.jdbc.Driver
+	Database version: 8.0.39
+	Autocommit mode: false
+	Isolation level: undefined/unknown
+	Minimum pool size: 1
+	Maximum pool size: 20
+15:26:35.774 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+15:26:35.892 [main] INFO  org.example.Main - The data was successfully uploaded to the database
+15:27:50.960 [main] ERROR org.example.Main - The pdf file with menu could not be found in the OPSO website.

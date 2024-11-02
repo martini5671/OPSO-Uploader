@@ -18,7 +18,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         PDFDownloader pdfDownloader = new PDFDownloader();
-        pdfDownloader.setLocalDate(LocalDate.parse("2024-10-31"));
         try {
             pdfDownloader.downloadPDF();
         } catch (FileNotFoundException fileNotFoundException) {

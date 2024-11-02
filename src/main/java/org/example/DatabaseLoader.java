@@ -1,20 +1,17 @@
 package org.example;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import org.example.entities.Meal;
 import org.example.entities.Menu;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 
 public class DatabaseLoader {
-    private EntityManager entityManager;
-    private List<Meal> mealList;
-    private Menu menu;
+    private final EntityManager entityManager;
+    private final List<Meal> mealList;
+    private final Menu menu;
 
     public DatabaseLoader(List<Meal> mealList, Menu menu) {
         this.mealList = mealList;
@@ -37,7 +34,7 @@ public class DatabaseLoader {
     }
 
     public static void main(String[] args) {
-
+        // persist test
         Meal m1 = new Meal("Solnik", "soup");
         Meal m2 = new Meal("Krupnik", "soup");
         Meal m3 = new Meal("Sałatka z sałatą", "vege");

@@ -26,6 +26,11 @@ public class Menu {
     public Menu() {
     }
 
+    public Menu(List<Meal> meals) {
+        this.meals = meals;
+        this.localDate = LocalDate.now();
+    }
+
 
     public Menu(List<Meal> meals, LocalDate localDate) {
         this.meals = meals;

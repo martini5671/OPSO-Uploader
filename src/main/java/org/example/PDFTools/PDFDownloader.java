@@ -1,6 +1,9 @@
 package org.example.PDFTools;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.time.LocalDate;
@@ -20,6 +23,7 @@ public class PDFDownloader {
     public PDFDownloader(LocalDate menuDate) {
         this.localDate = menuDate;
     }
+
     public LocalDate getLocalDate() {
         return localDate;
     }
@@ -31,6 +35,7 @@ public class PDFDownloader {
     public String getPdfFileName() {
         return pdfFileName;
     }
+
     public void downloadPDF() throws IOException {
         String url = getUrl();
         URL website = new URL(url);

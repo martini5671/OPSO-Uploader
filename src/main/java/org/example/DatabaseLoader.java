@@ -48,9 +48,8 @@ public class DatabaseLoader {
         Meal m2 = new Meal("Krupnik", "soup");
         Meal m3 = new Meal("Sałatka z sałatą", "vege");
         Menu menu1 = new Menu();
-        menu1.setLocalDate(LocalDate.now().minusDays(1));
         Map<String, String> hibernateProps = new HashMap<>();
-        DatabaseLoader databaseLoader = new DatabaseLoader(List.of(m1, m2, m3), menu1);
+        DatabaseLoader databaseLoader = new DatabaseLoader(List.of(m1, m2, m3), menu1, hibernateProps);
         databaseLoader.persistAll();
     }
 

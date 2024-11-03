@@ -55,10 +55,10 @@ public class CLIParser {
 
     public static void main(String[] args) {
         String[] strings = new String[1];
-        strings[0] = "jakarta.persistence.jdbc.user=opso";
+        strings[0] = "jakarta.persistence.jdbc.user=opso;date=2024-10-45";
         CLIParser cliParser = new CLIParser(strings);
         System.out.println("Config map:");
-        System.out.println(cliParser.getConfigMap());
+        System.out.println(cliParser.getConfigMap().get("jakarta.persistence.jdbc.user"));
         System.out.println("date:");
         System.out.println(cliParser.getLocalDate());
 

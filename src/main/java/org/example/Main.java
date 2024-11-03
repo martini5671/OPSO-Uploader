@@ -48,7 +48,9 @@ public class Main {
 
         DatabaseLoader databaseLoader;
         if (menuDate != null) {
-            databaseLoader = new DatabaseLoader(meals, new Menu(meals), hibernateProps);
+            Menu menu = new Menu(meals);
+            menu.setLocalDate(menuDate);
+            databaseLoader = new DatabaseLoader(meals, menu, hibernateProps);
         } else {
             databaseLoader = new DatabaseLoader(meals, new Menu(meals));
         }

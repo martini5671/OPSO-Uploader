@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 
 public class PDFDownloader {
     // Define the desired format
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.MM.yyyy");
 
     private LocalDate localDate = LocalDate.now();
     private final String baseUrl = "https://opso.pl/wp-content/uploads";
